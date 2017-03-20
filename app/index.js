@@ -105,7 +105,7 @@ class App extends Component {
 						<button type="button" className="bttn-material-flat bttn-md bttn-success btn" onClick={() => this.callHandler(1)}>Single</button>
 						<button type="button" className="bttn-material-flat bttn-md bttn-success btn" onClick={() => this.callHandler(2)}>Return</button>
 					</div>
-		            <Alert stack={{limit: 3}} />
+		            <Alert stack={{limit: 1}} />
 				</div>
 			)
 	}

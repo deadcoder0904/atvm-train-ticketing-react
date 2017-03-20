@@ -248,7 +248,7 @@
 							'Return'
 						)
 					),
-					_react2.default.createElement(_reactSAlert2.default, { stack: { limit: 3 } })
+					_react2.default.createElement(_reactSAlert2.default, { stack: { limit: 1 } })
 				);
 			}
 		}]);
