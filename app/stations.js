@@ -1,12 +1,6 @@
 export default
 [
   {
-    "label":"Churchgate",
-    "state":"Mumbai",
-    "value":"Churchgate",
-    "price":5
-  },
-  {
     "label":"Marine Lines",
     "state":"Mumbai",
     "value":"Marine Lines",
