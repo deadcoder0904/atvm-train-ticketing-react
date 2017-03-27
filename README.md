@@ -2,7 +2,7 @@
 
 # Screenshot
 
-![atvm-train-ticketing-react](http://imgur.com/x8UzFBW.png)
+![atvm-train-ticketing-react](http://imgur.com/lbzWTUj.png)
 
 ## License
 

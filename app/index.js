@@ -18,24 +18,13 @@ class App extends Component {
 		this.state = {
 			seats: 0,
 			startDate: moment(),
-			source: {},
 			destination: {}
 		}
-		this.randomNumber = this.randomNumber.bind(this)
-		this.setSource = this.setSource.bind(this)
 		this.setDestination = this.setDestination.bind(this)
 		this.handleChange = this.handleChange.bind(this)
 		this.toggleCalendar = this.toggleCalendar.bind(this)
 		this.setSeats = this.setSeats.bind(this)
 		this.callHandler = this.callHandler.bind(this)
-	}
-
-	randomNumber(min,max) {
-		return Math.floor(Math.random() * (max - min) + min);
-	}
-
-	setSource(source) {
-		this.setState({source})
 	}
 
 	setDestination(destination) {
@@ -58,18 +47,24 @@ class App extends Component {
 	}
 
 	callHandler(singleOrReturn) {
-		if(Object.keys(this.state.source).length !== 0 && Object.keys(this.state.destination).length !== 0 && this.state.seats > 0)
+		if(Object.keys(this.state.destination).length !== 0 && this.state.seats > 0)
 			{
-				const price = this.randomNumber(300,1500);
+				let price = 0;
+				for(var i = 0; i < Stations.length; i++) {
+					if(Stations[i].label.toLowerCase() == this.state.destination.label.toLowerCase()) {
+						price = Stations[i].price;
+						break;
+					}
+				}
 				Alert.success('Ticket Successfully booked for ' + this.state.seats + ' people at Rs. ' + (price * this.state.seats * singleOrReturn), {
-		            position: 'bottom-left',
+		            position: 'bottom',
 		            effect: 'bouncyflip',
 		            timeout: 5000
 		        });
 			}
 		else {
 			Alert.error('Please Fill All the Fields', {
-	            position: 'bottom-right',
+	            position: 'bottom',
 	            effect: 'bouncyflip',
 	            timeout: 3000
 	        });
@@ -80,8 +75,8 @@ class App extends Component {
 		return (
 				<div>
 					<h1>ATVM Train Ticketing</h1>
-					<div className="label">Source Station</div>
-					<RenderSelect name="source" options={Stations} setStateValue={this.setSource} />
+					<div className="label" id="currentStation">Current Station: Churchgate</div>
+					<hr />
 					<div className="label">Destination Station</div>
 					<RenderSelect name="destination" options={Stations} setStateValue={this.setDestination} />
 					<div className="label">Choose Journey Date</div>
@@ -97,7 +92,7 @@ class App extends Component {
 				                inline />
 				        )
 				    }
-				    <div className="label">Enter number of people</div>
+				    <div className="label">Enter number of tickets</div>
 					<div className="flex">
 						<input type="number" placeholder="Enter number of seats" value={this.state.seats} onChange={this.setSeats} />
 					</div>

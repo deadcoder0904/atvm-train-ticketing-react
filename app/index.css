@@ -97,3 +97,8 @@ input {
     width: 100%;
     margin: 1em;
 }
+
+#currentStation {
+	color: cornflowerblue;
+	font-size: 3em;
+}
