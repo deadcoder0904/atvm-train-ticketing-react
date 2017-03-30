@@ -75,7 +75,7 @@ class App extends Component {
 		return (
 				<div>
 					<h1>ATVM Train Ticketing</h1>
-					<div className="label" id="currentStation">Current Station: Churchgate</div>
+					<div className="label" id="currentStation">Current Station: Dadar</div>
 					<hr />
 					<div className="label">Destination Station</div>
 					<RenderSelect name="destination" options={Stations} setStateValue={this.setDestination} />

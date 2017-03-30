@@ -1,6 +1,12 @@
 export default
 [
   {
+    "label":"Churchgate",
+    "state":"Mumbai",
+    "value":"Churchgate",
+    "price":5
+  },
+  {
     "label":"Marine Lines",
     "state":"Mumbai",
     "value":"Marine Lines",
@@ -40,12 +46,6 @@ export default
     "label":"Elphinstone road",
     "state":"Mumbai",
     "value":"Elphinstone road",
-    "price":5
-  },
-  {
-    "label":"Dadar",
-    "state":"Mumbai",
-    "value":"Dadar",
     "price":5
   },
   {
